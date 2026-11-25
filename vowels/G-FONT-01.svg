@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_격리_모드" data-name="격리 모드" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700">
+  <rect x="0" width="500" height="130"/>
+  <rect x="370" y="200" width="130" height="500"/>
+  <rect x="0" y="200" width="130" height="500"/>
+  <circle cx="250" cy="450" r="65"/>
+</svg>
