@@ -464,7 +464,7 @@ function tNormalize(s){
  if(!(s.v>=2)){s.letters.forEach((l,i)=>{if(l&&isGFont(s.text[i]))l.prim="FONT";});s.v=2;} /* saved before the G-FONT vowels: switch vowels to them */
  if(s.v<3){s.word.interlock=0;s.word.tracking=10;s.letters.forEach(l=>{if(l){l.nest=false;l.overlap=0;}});s.v=3;} /* spacing reset to the reference image */
  if(s.word.invert&&s.word.theme==="A")s.word.theme="B";
- ["guides","interlock","info","invert"].forEach(k=>delete s.word[k]);s.word.lineGap=44;s.letters.forEach(l=>{if(l)l.nest=false;});
+ ["guides","interlock","info","invert"].forEach(k=>delete s.word[k]);s.letters.forEach(l=>{if(l)l.nest=false;});
  return s;
 }
 let tState=tFresh(),tNeedFit=true,loadNote="";
@@ -506,7 +506,8 @@ function tWordPanel(){
  return `<div class="h2row"><h2>Global</h2></div>`
  +slider("w.size","Font size (all)",.15,5,.01,w.size,f2)
  +slider("w.tracking","Letter spacing (all)",-80,160,1,w.tracking)
-  +slider("w.vy","Top offset",-400,400,1,w.vy)
+  +slider("w.lineGap","Line spacing (all)",-60,200,1,w.lineGap)
+ +slider("w.vy","Top offset",-400,400,1,w.vy)
  +toggles("w.fw",FW,w.fw,{label:"Font weight (consonants)",cols:4})
  +toggles("w.align",[["left","Left"],["center","Center"],["right","Right"]],w.align,{label:"Align",cols:3})
  +themeGrid(tTheme(w).id)
